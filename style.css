@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  max-width: 400px;
+  margin: 1.5rem;
+}
+
+.gift-icon {
+  font-size: 4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.gift-icon:hover {
+  transform: scale(1.15) rotate(6deg);
+}
+
+.hidden {
+  display: none;
+}
+
+.photo {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 1.25rem;
+}
