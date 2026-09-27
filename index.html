@@ -3,16 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday!</title>
+  <title>Happy Birthday, Unnie Ei!</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&interpolate=bilinear&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-  <div class="card">
-    <div id="gift" class="gift-icon">🎉</div>
-    <h1 id="title">Tap the gift!</h1>
-    <p id="message" class="hidden">Wishing you a year ahead filled with love, laughter, and endless happiness! ✄🎊</p>
-    <div id="gallery" class="hidden">
+  <div class="stars"></div>
+
+  <!-- 1. Music Prompt Modal -->
+  <div id="music-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="icon-circle">♨</div>
+      <h2 class="modal-title">Would you like some music?</h2>
+      <p class="modal-subtitle">This experience is best enjoyed with audio.</p>
+      <button id="play-music-btn" class="btn-chic base-light">♥ Play Music</button>
+      <button id="skip-music-btn" class="btn-chic base-dark">Skip for now</button>
+    </div>
+  </div>
+
+  <!-- 2. Welcome Screen -->
+  <div id="welcome-screen" class="container">
+    <h1 class="welcome-title">Happy Birthday,</h1>
+    <h2 class="welcome-name">Unnie Ei</h2>
+    <p class="welcome-sub">I made something special just for you.</p>
+
+    <div class="flower-container">
+      <div class="petal petal-left"></div>
+      <div class="petal petal-right"></div>
+      <div class="heart-core"></div>
+      <div class="stem"></div>
+      <div class="leaf leaf-left"></div>
+      <div class="leaf leaf-right"></div>
+    </div>
+
+    <button id="open-gift-btn" class="open-btn">OPEN MY GIFT</button>
+  </div>
+
+  <!-- 3. Gift & Reveal Screen -->
+  <div id="gift-screen" class="card hidden">
+    <div class="gift-icon">✩</div>
+    <h1 class="title">Happy Birthday, Unnie Ei! 🎊</h1>
+    <p class="bday-sub">You bring so much warmth and joy into my life.</p>
+
+    <div id="gallery" class="gallery">
       <img src="photo1.png" class="photo">
       <img src="photo2.png" class="photo">
       <img src="photo3.png" class="photo">
@@ -21,8 +57,116 @@
       <img src="photo6.png" class="photo">
       <img src="photo7.png" class="photo">
     </div>
+
+    <!-- 4. Reasons You're Awesome -->
+    <div class="reasons-section">
+      <h2 class="reasons-title">Reasons You're Awesome</h2>
+      <p class="reasons-sub">Click to reveal.</p>
+
+      <div class="reasons-grid">
+        <div class="reveal-card">
+          <div class="card-front"><span class="card-num">1</span><span class="card-hint">REVEAL</span></div>
+          <div class="card-back">Your kindness makes everyone around you feel so genuinely comfortable and cherished.</div>
+        </div>
+
+        <div class="reveal-card">
+          <div class="card-front"><span class="card-num">2</span><span class="card-hint">REVEAL</span></div>
+          <div class="card-back">You have the most radiant, softest smile that lights up even the dimmest days.</div>
+        </div>
+
+        <div class="reveal-card">
+          <div class="card-front"><span class="card-num">3</span><span class="card-hint">REVEAL</span></div>
+          <div class="card-back">You always listen with so much patience, grace, and unconditional understanding.</div>
+        </div>
+
+        <div class="reveal-card">
+          <div class="card-front"><span class="card-num">4</span><span class="card-hint">REVEAL</span></div>
+          <div class="card-back">You inspire me by being so strong, thoughtful, and beautiful inside and out.</div>
+        </div>
+
+        <div class="reveal-card">
+          <div class="card-front"><span class="card-num">5</span><span class="card-hint">REVEAL</span></div>
+          <div class="card-back">Having you as my Unnie is one of the sweetest blessings my heart could ever ask for. ❤️</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. A Letter For You -->
+    <div class="letter-section">
+      <h2 class="letter-title">A Letter For You</h2>
+      <p class="letter-sub">Click the envelope to open.</p>
+
+
+      <div id="envelope-wrapper" class="envelope-wrapper">
+        <div class="envelope-base">
+          <div class="envelope-flap"></div>
+          <div class="envelope-heart-seal">✨</div>
+        </div>
+      </div>
+
+
+      <div id="letter-paper" class="letter-paper hidden">
+        <h3 class="letter-salutation">My Dearest Unnie Ei,
+</h3>
+        <p class="letter-body">
+          Happy Birthday! I wanted to take a moment today to remind you how truly special you are to me and how grateful I am to have you in my life. Growing up around you has been such a wonderful gift—you’re not just my cousin, you have always been the sweetest, most supportive Unnie anyone could ever ask for.
+        </p>
+        <p class="letter-body">
+          Your gentle smile, your patience, and the warmth you share always bring me comfort. You have this effortless way of making everyone around you feel so seen, valued, and cherished.
+        </p>
+        <p class="letter-body">
+          On your special day, I wish you endless laughter, smiles, unbreakable peace, and every dream coming true. May this year bring you as much happiness as you softly bring into my life!
+        </p>
+        <p class="letter-closing">
+          Always with love and admiration,<br>
+          <span class="letter-sign">Your Little Cousin ❤️<br>Yoon Yoon</span>
+        </p>
+
+
+        <!-- One Last Thing Button -->
+        <div class="final-trigger-box">
+          <button id="final-box-btn" class="final-btn">ONELAST THING ✈</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Final Celebration Screen -->
+    <div id="final-screen" class="final-screen hidden">
+      <h1 class="final-heading">Happy Birthday!</h1>
+      <p class="final-desc">I hope this year brings you happiness, good health, new adventures, and countless reasons to smile.</p>
+      <p class="final-thanks">Thank you for taking the time to visit this little website.</p>
+      <div class="final-flower">✨</div>
+      <p class="final-footer">MADE WITH CARE. HAPPX BIRTHDAY 🌸</p>
+    </div>
   </div>
-  <audio id="bday-music" src="hbd.mp3" preload="auto"></audio>
+
+
+  <!-- Floating Music Player Widget -->
+  <div id="music-player-widget" class="music-widget hidden">
+    <div class="widget-header">
+      <span>NOW PLAYING</span>
+      <span>⌇</span>
+    </div>
+    <div class="widget-body">
+      <div class="widget-disc">🎩</div>
+      <div class="widget-info">
+        <div class="widget-track">Happy Birthday</div>
+        <div class="widget-artist">Nastelbom</div>
+      </div>
+    </div>
+    <div class="progress-bar">
+      <div id="widget-progress" class="progress-fill"></div>
+    </div>
+    <div class="widget-controls">
+      <span class="ctrl-btn">⤎</span>
+      <div id="play-pause-toggle" class="play-circle">▶️</div>
+      <span class="ctrl-btn">⤏</span>
+    </div>
+  </div>
+
+
+  <audio id="bday-music" src="hbd.mp3" preload="auto" loop></audio>
+
   <script src="script.js"></script>
 </body>
 </html>
