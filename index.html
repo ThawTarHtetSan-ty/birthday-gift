@@ -16,10 +16,10 @@
   <!-- 1. Music Prompt Modal -->
   <div id="music-modal" class="modal-overlay">
     <div class="modal-card">
-      <div class="icon-circle">♨</div>
+      <div class="icon-circle">♫</div>
       <h2 class="modal-title">Would you like some music?</h2>
       <p class="modal-subtitle">This experience is best enjoyed with audio.</p>
-      <button id="play-music-btn" class="btn-chic base-light">♥ Play Music</button>
+      <button id="play-music-btn" class="btn-chic base-light">♫ Play Music</button>
       <button id="skip-music-btn" class="btn-chic base-dark">Skip for now</button>
     </div>
   </div>
@@ -44,18 +44,18 @@
 
   <!-- 3. Gift & Reveal Screen -->
   <div id="gift-screen" class="card hidden">
-    <div class="gift-icon">✩</div>
+    <div class="gift-icon">✨</div>
     <h1 class="title">Happy Birthday, Unnie Ei! 🎊</h1>
     <p class="bday-sub">You bring so much warmth and joy into my life.</p>
 
     <div id="gallery" class="gallery">
-      <img src="photo1.png" class="photo">
-      <img src="photo2.png" class="photo">
-      <img src="photo3.png" class="photo">
-      <img src="photo4.png" class="photo">
-      <img src="photo5.png" class="photo">
-      <img src="photo6.png" class="photo">
-      <img src="photo7.png" class="photo">
+      <img src="photo1.png" class="photo" alt="Memory 1">
+      <img src="photo2.png" class="photo" alt="Memory 2">
+      <img src="photo3.png" class="photo" alt="Memory 3">
+      <img src="photo4.png" class="photo" alt="Memory 4">
+      <img src="photo5.png" class="photo" alt="Memory 5">
+      <img src="photo6.png" class="photo" alt="Memory 6">
+      <img src="photo7.png" class="photo" alt="Memory 7">
     </div>
 
     <!-- 4. Reasons You're Awesome -->
@@ -96,20 +96,17 @@
       <h2 class="letter-title">A Letter For You</h2>
       <p class="letter-sub">Click the envelope to open.</p>
 
-
       <div id="envelope-wrapper" class="envelope-wrapper">
         <div class="envelope-base">
           <div class="envelope-flap"></div>
-          <div class="envelope-heart-seal">✨</div>
+          <div class="envelope-heart-seal">💌</div>
         </div>
       </div>
 
-
       <div id="letter-paper" class="letter-paper hidden">
-        <h3 class="letter-salutation">My Dearest Unnie Ei,
-</h3>
+        <h3 class="letter-salutation">My Dearest Unnie Ei,</h3>
         <p class="letter-body">
-          Happy Birthday! I wanted to take a moment today to remind you how truly special you are to me and how grateful I am to have you in my life. Growing up around you has been such a wonderful gift—you’re not just my cousin, you have always been the sweetest, most supportive Unnie anyone could ever ask for.
+          Happy Birthday! I wanted to take a moment today to remind you how truly special you are to me and how grateful I am to have you in my life. Growing up around you has been such a wonderful gift—you're not just my cousin, you have always been the sweetest, most supportive Unnie anyone could ever ask for.
         </p>
         <p class="letter-body">
           Your gentle smile, your patience, and the warmth you share always bring me comfort. You have this effortless way of making everyone around you feel so seen, valued, and cherished.
@@ -122,10 +119,9 @@
           <span class="letter-sign">Your Little Cousin ❤️<br>Yoon Yoon</span>
         </p>
 
-
         <!-- One Last Thing Button -->
         <div class="final-trigger-box">
-          <button id="final-box-btn" class="final-btn">ONELAST THING ✈</button>
+          <button id="final-box-btn" class="final-btn">ONE LAST THING 🌸</button>
         </div>
       </div>
     </div>
@@ -135,36 +131,41 @@
       <h1 class="final-heading">Happy Birthday!</h1>
       <p class="final-desc">I hope this year brings you happiness, good health, new adventures, and countless reasons to smile.</p>
       <p class="final-thanks">Thank you for taking the time to visit this little website.</p>
-      <div class="final-flower">✨</div>
-      <p class="final-footer">MADE WITH CARE. HAPPX BIRTHDAY 🌸</p>
+      <div class="final-flower">🌸</div>
+      <p class="final-footer">MADE WITH CARE. HAPPY BIRTHDAY 🌸</p>
     </div>
   </div>
-
 
   <!-- Floating Music Player Widget -->
   <div id="music-player-widget" class="music-widget hidden">
     <div class="widget-header">
       <span>NOW PLAYING</span>
-      <span>⌇</span>
+      <span>⌄</span>
     </div>
     <div class="widget-body">
-      <div class="widget-disc">🎩</div>
+      <div class="widget-disc">🎵</div>
       <div class="widget-info">
         <div class="widget-track">Happy Birthday</div>
-        <div class="widget-artist">Nastelbom</div>
+        <div class="widget-artist">For Unnie Ei</div>
       </div>
     </div>
     <div class="progress-bar">
       <div id="widget-progress" class="progress-fill"></div>
     </div>
     <div class="widget-controls">
-      <span class="ctrl-btn">⤎</span>
-      <div id="play-pause-toggle" class="play-circle">▶️</div>
-      <span class="ctrl-btn">⤏</span>
+      <span class="ctrl-btn">⏮</span>
+      <div id="play-pause-toggle" class="play-circle">❚❚</div>
+      <span class="ctrl-btn">⏭</span>
     </div>
   </div>
 
+  <!-- Photo Lightbox (click a photo to zoom) -->
+  <div id="lightbox-modal" class="lightbox-overlay hidden">
+    <span id="close-lightbox" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Zoomed memory">
+  </div>
 
+  <!-- Local birthday track. Make sure hbd.mp3 is uploaded in the SAME folder as this index.html -->
   <audio id="bday-music" src="hbd.mp3" preload="auto" loop></audio>
 
   <script src="script.js"></script>
